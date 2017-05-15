@@ -14,11 +14,11 @@ using ObliterateBinaryArtifactsXamarin.Domain;
 
 namespace ObliterateBinaryArtifactsXamarin
 {
-    public partial class Form1 : MetroForm
+    public partial class MainForm : MetroForm
     {
         private Domain.ConfigRepository _configRepository;
         private Domain.ObliterateBinaryFiles _obliterateBinaryFiles;
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             btnObliterateFiles.UseCustomForeColor = true;
