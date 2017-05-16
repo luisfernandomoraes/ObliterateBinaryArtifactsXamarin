@@ -9,15 +9,19 @@ namespace ObliterateBinaryArtifactsXamarin.Test
     [TestClass]
     public class ObliterateBinaryFilesTest
     {
-        private string _path = "C:\\Users\\Usuario\\Documents\\ProjectTest\\Projet1";
+        private string _path = "C:\\ProjectTarget";
 
         [TestInitialize]
         public void TestInit()
         {
             // Copiar binarios para a pasta de teste. 
-            var directory = Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString())
-                .ToString()).ToString();
-            DirectoryHelper.DirectoryCopy(directory, _path, true);
+            //var directory = Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString())
+            //    .ToString()).ToString();
+
+            // Caso o projeto de teste seja modificado, deve ser alterado manualmente o resultado esperado do teste
+            // DEVE_RETORNAR_TODOS_OS_SUBDIR_QUE_CONTENHAM_BIN_E_OBJ.
+            var directorySource = "C:\\ProjectTestBase";
+            DirectoryHelper.DirectoryCopy(directorySource, _path, true);
 
         }
 
@@ -49,7 +53,7 @@ namespace ObliterateBinaryArtifactsXamarin.Test
             var directories = obliterateBinaryFiles.GetAllDirectoriesWithBinOrObjFolders(_path);
 
             //Assert
-            Assert.AreEqual(6,directories.Count());
+            Assert.AreEqual(8,directories.Count());
         }
 
         [TestMethod]

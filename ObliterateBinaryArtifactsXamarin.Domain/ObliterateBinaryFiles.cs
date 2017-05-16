@@ -38,7 +38,7 @@ namespace ObliterateBinaryArtifactsXamarin.Domain
         public IEnumerable<string> GetAllDirectoriesWithBinOrObjFolders(string projectPath)
         {
             var directories = Directory.EnumerateDirectories(projectPath, "*.*", SearchOption.AllDirectories)
-                .Where(s => s.EndsWith("bin") || s.EndsWith("obj")).ToList(); 
+                .Where(s => s.EndsWith("bin") || s.EndsWith("obj")).ToList().OrderByDescending(x=>x.Length).ToList(); 
 
             return directories;
         }

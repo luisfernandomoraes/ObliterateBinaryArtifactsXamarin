@@ -10,7 +10,7 @@ namespace ObliterateBinaryArtifactsXamarin.Test
     public class ConfigRepositoryTest
     {
         private ConfigRepository _configRepositoryInstance;
-        private string _path = "C:\\Users\\Usuario\\Documents\\ProjectTest\\Projet1";
+        private string _path = "C:\\Users\\Usuario\\Documents\\ProjectTest\\ProjectTarget";
         [TestInitialize]
         public void TestInit()
         {

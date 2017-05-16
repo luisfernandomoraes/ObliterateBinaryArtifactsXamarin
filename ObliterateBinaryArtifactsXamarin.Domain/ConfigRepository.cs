@@ -32,7 +32,7 @@ namespace ObliterateBinaryArtifactsXamarin.Domain
             _filePath = $"{currentDir}\\obliterate_configs.json";
 
             if (!File.Exists(_filePath))
-                File.Create(_filePath);
+                File.Create(_filePath).Close();
         }
 
         /// <summary>
@@ -44,6 +44,7 @@ namespace ObliterateBinaryArtifactsXamarin.Domain
             {
                 string json = r.ReadToEnd();
                 var deserializeObject = JsonConvert.DeserializeObject<ConfigRepository>(json);
+                if(deserializeObject == null) return;
                 this.ProjectPath = deserializeObject.ProjectPath;
             }
         }
@@ -54,11 +55,8 @@ namespace ObliterateBinaryArtifactsXamarin.Domain
         /// <returns>true caso tenha sido executado com exito ou uma exception caso tenha ocorrido algum erro.</returns>
         public bool Save()
         {
-            using (StreamWriter file = File.CreateText(_filePath))
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(file, this);
-            }
+            string json = JsonConvert.SerializeObject(this,Formatting.None);
+            File.WriteAllText(_filePath, json);
             return true;
         }
     }

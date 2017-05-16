@@ -41,7 +41,7 @@ namespace ObliterateBinaryArtifactsXamarin
             // 
             // 
             this.txbProjetcPath.CustomButton.Image = null;
-            this.txbProjetcPath.CustomButton.Location = new System.Drawing.Point(339, 2);
+            this.txbProjetcPath.CustomButton.Location = new System.Drawing.Point(391, 2);
             this.txbProjetcPath.CustomButton.Name = "";
             this.txbProjetcPath.CustomButton.Size = new System.Drawing.Size(15, 15);
             this.txbProjetcPath.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -86,8 +86,9 @@ namespace ObliterateBinaryArtifactsXamarin
             this.btnObliterateFiles.TabIndex = 2;
             this.btnObliterateFiles.Text = "Obliterar Artefatos Binários";
             this.btnObliterateFiles.UseSelectable = true;
+            this.btnObliterateFiles.Click += new System.EventHandler(this.btnObliterateFiles_Click);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -97,7 +98,7 @@ namespace ObliterateBinaryArtifactsXamarin
             this.Controls.Add(this.txbProjetcPath);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Xamarin Clear Binary Artefacts";
             this.ResumeLayout(false);
 

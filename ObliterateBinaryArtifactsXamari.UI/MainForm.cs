@@ -82,5 +82,29 @@ namespace ObliterateBinaryArtifactsXamarin
                 }
             }
         }
+
+        private void btnObliterateFiles_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(_configRepository.ProjectPath))
+            {
+                try
+                {
+                    Cursor.Current = Cursors.WaitCursor;
+                    _obliterateBinaryFiles.DeleteInSubFolders(_configRepository.ProjectPath);
+                    MetroMessageBox.Show(this, "Arquivos deletados com sucesso!", this.Text,
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception exception)
+                {
+                    MetroMessageBox.Show(this,
+                        $"Ocorreu um erro ao salvar as informações. Descrição: {exception}", this.Text,
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    Cursor.Current = Cursors.Default;
+                }
+            }
+        }
     }
 }
