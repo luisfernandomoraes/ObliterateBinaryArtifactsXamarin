@@ -30,6 +30,7 @@ namespace ObliterateBinaryArtifactsXamarin
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.txbProjetcPath = new MetroFramework.Controls.MetroTextBox();
             this.btnOpenProjectRootPage = new MetroFramework.Controls.MetroButton();
             this.btnObliterateFiles = new MetroFramework.Controls.MetroButton();
@@ -96,6 +97,7 @@ namespace ObliterateBinaryArtifactsXamarin
             this.Controls.Add(this.btnObliterateFiles);
             this.Controls.Add(this.btnOpenProjectRootPage);
             this.Controls.Add(this.txbProjetcPath);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";

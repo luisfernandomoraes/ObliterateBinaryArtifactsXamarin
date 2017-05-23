@@ -22,4 +22,4 @@ OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 Portions of this software are:
 
-  Copyright (c) 2011 Sven Walter, http://github.com/viperneo
+Copyright (c) 2011 Sven Walter, http://github.com/viperneo
